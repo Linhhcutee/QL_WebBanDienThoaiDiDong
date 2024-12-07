@@ -1,0 +1,49 @@
+﻿@model webbandienthoai.Models.Taikhoan
+
+@{
+    ViewData["Title"] = "ThemTaiKhoan";
+}
+
+<h1>ThemTaiKhoan</h1>
+
+<h4>Taikhoan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ThemTaiKhoan">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TenTk" class="control-label">Tên Tài Khoản</label>
+                <input asp-for="TenTk" class="form-control" />
+                <span asp-validation-for="TenTk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mk" class="control-label">Mật Khẩu</label>
+                <input asp-for="Mk" class="form-control" />
+                <span asp-validation-for="Mk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoDem" class="control-label">Họ Đệm</label>
+                <input asp-for="HoDem" class="form-control" />
+                <span asp-validation-for="HoDem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ten" class="control-label">Tên</label>
+                <input asp-for="Ten" class="form-control" />
+                <span asp-validation-for="Ten" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VaiTroId" class="control-label">Vai Trò</label>
+                <select asp-for="VaiTroId" class="form-control" asp-items="ViewBag.VaiTroId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

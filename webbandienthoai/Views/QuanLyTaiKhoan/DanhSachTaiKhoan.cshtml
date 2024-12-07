@@ -1,0 +1,72 @@
+﻿@model IEnumerable<TaiKhoanViewModel>
+
+@{
+    ViewData["Title"] = "QuanLyTaiKhoan";
+}
+
+<h1>QuanLyTaiKhoan</h1>
+
+<p>
+    <a asp-action="themtaikhoan">Thêm Tài Khoản</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tên Tài Khoản
+            </th>
+            <th>
+                Mật Khẩu
+            </th>
+            <th>
+                Họ Đệm
+            </th>
+            <th>
+                Tên
+            </th>
+            <th>
+                Trạng Thái
+            </th>
+            <th>
+                Vai Trò
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTk)
+            </td>
+            <td>
+                @String.Concat(Enumerable.Repeat('*', item.Mk.Length))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoDem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                    @if (item.TrangThai)
+                    {
+                        @:Hoạt động
+                    }
+                    else
+                    {
+                        @:Không hoạt động
+                    }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VaiTro)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

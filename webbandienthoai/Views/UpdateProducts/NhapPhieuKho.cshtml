@@ -1,0 +1,127 @@
+﻿@model NhapPhieuKhoViewModel
+
+@{
+    ViewData["Title"] = "Nhập Phiếu Kho";
+}
+
+<h1>Phiếu Nhập Kho</h1>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<form method="post" asp-action="NhapPhieuKho" class="col-md-4">
+    <!-- Phiếu Nhập Kho -->
+    <div class="form-group">
+        <label for="PhieuNhap.TenNv">Nhân Viên</label>
+        <select asp-for="PhieuNhap.TenNv" class="form-control" asp-items="ViewBag.TenNv"></select>
+    </div>
+    <div class="form-group">
+        <label for="PhieuNhap.Trangthaitt">Trạng Thái</label>
+        <select asp-for="PhieuNhap.Trangthaitt" class="form-control">
+            <option value="Đã Thanh Toán">Đã Thanh Toán</option>
+            <option value="Chưa Thanh Toán">Chưa Thanh Toán</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="PhieuNhap.Mota">Mô Tả</label>
+        <input asp-for="PhieuNhap.Mota" class="form-control" />
+    </div>
+
+    <!-- Chi Tiết Phiếu Nhập Kho -->
+    <h3>Chi Tiết Phiếu Nhập Kho</h3>
+    <div id="chiTietContainer">
+        @for (int i = 0; i < Model.ChiTietNhap.Count; i++)
+        {
+            <div class="form-group">
+                <label for="ChiTietNhap[@i].TenSanPham">Tên Sản Phẩm</label>
+                <select asp-for="ChiTietNhap[@i].TenSanPham" class="form-control" asp-items="ViewBag.Ten"></select>
+            </div>
+            <div class="form-group">
+                <label for="ChiTietNhap[@i].Soluong">Số Lượng</label>
+                <input asp-for="ChiTietNhap[@i].Soluong" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="ChiTietNhap[@i].GiaNhap">Giá Nhập</label>
+                <input asp-for="ChiTietNhap[@i].GiaNhap" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="ChiTietNhap[@i].Ghichu">Ghi Chú</label>
+                <input asp-for="ChiTietNhap[@i].Ghichu" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="ChiTietNhap[@i].LoaiSp">Loại Sản Phẩm</label>
+                <select asp-for="ChiTietNhap[@i].LoaiSp" class="form-control" asp-items="ViewBag.LoaiSp"></select>
+            </div>
+        }
+    </div>
+
+    <!-- Trường nhập số lượng chi tiết cần thêm -->
+    <div class="form-group">
+        <label for="numberOfDetails">Số sản phẩm Cần Nhập</label>
+        <input type="number" id="numberOfDetails" class="form-control" value="1" min="1" />
+    </div>
+
+    <button type="button" class="btn btn-secondary" id="addDetailBtn">Thêm Chi Tiết</button>
+
+    <div class="form-group">
+        <input type="submit" value="Lưu" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        // Truyền dữ liệu từ ViewBag vào JavaScript
+        var products = @Html.Raw(Json.Serialize(ViewBag.Ten));
+        var categories = @Html.Raw(Json.Serialize(ViewBag.LoaiSp));
+
+        document.getElementById('addDetailBtn').addEventListener('click', function () {
+            const container = document.getElementById('chiTietContainer');
+            const numberOfDetails = document.getElementById('numberOfDetails').value; // Lấy số chi tiết cần thêm
+            const index = container.children.length / 5;  // Giả sử mỗi chi tiết có 5 trường (input/select)
+
+            const productOptions = products.map(product => `<option value="${product.value}">${product.text}</option>`).join('');
+            const categoryOptions = categories.map(category => `<option value="${category.value}">${category.text}</option>`).join('');
+
+            for (let i = 0; i < numberOfDetails; i++) {
+                const newDetail = `
+                            <div class="form-group">
+                                <label for="ChiTietNhap[${index + i}].TenSanPham">Tên Sản Phẩm</label>
+                                <select name="ChiTietNhap[${index + i}].TenSanPham" class="form-control">
+                                    ${productOptions}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="ChiTietNhap[${index + i}].Soluong">Số Lượng</label>
+                                <input name="ChiTietNhap[${index + i}].Soluong" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="ChiTietNhap[${index + i}].GiaNhap">Giá Nhập</label>
+                                <input name="ChiTietNhap[${index + i}].GiaNhap" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="ChiTietNhap[${index + i}].Ghichu">Ghi Chú</label>
+                                <input name="ChiTietNhap[${index + i}].Ghichu" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="ChiTietNhap[${index + i}].LoaiSp">Loại Sản Phẩm</label>
+                                <select name="ChiTietNhap[${index + i}].LoaiSp" class="form-control">
+                                    ${categoryOptions}
+                                </select>
+                            </div>
+                            <hr>
+                        `;
+                container.insertAdjacentHTML('beforeend', newDetail);
+            }
+        });
+    </script>
+}

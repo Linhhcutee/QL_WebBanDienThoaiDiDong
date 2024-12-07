@@ -1,0 +1,104 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<webbandienthoai.Models.Sanpham>
+
+@{
+    ViewData["Title"] = "DanhMucSanPham";
+}
+
+<h1>Danh Mục Sản Phẩm</h1>
+
+<p>
+    <a asp-action="themsanpham" 
+       style="text-decoration: none; color: #007bff; font-weight: bold; padding: 8px 12px; border: 1px solid #007bff; border-radius: 5px; transition: background-color 0.3s, color 0.3s;"
+       onmouseover="this.style.backgroundColor='#007bff'; this.style.color='#fff';" 
+       onmouseout="this.style.backgroundColor=''; this.style.color='#007bff';">
+       Thêm mới sản phẩm
+    </a>
+    
+    <a asp-action="nhapkho" 
+       style="text-decoration: none; color: #28a745; font-weight: bold; padding: 8px 12px; border: 1px solid #28a745; border-radius: 5px; transition: background-color 0.3s, color 0.3s;"
+       onmouseover="this.style.backgroundColor='#28a745'; this.style.color='#fff';" 
+       onmouseout="this.style.backgroundColor=''; this.style.color='#28a745';">
+       Nhập Kho
+    </a>
+    
+    <a asp-action="CTPhieuNhapKho" 
+       style="text-decoration: none; color: #17a2b8; font-weight: bold; padding: 8px 12px; border: 1px solid #17a2b8; border-radius: 5px; transition: background-color 0.3s, color 0.3s;"
+       onmouseover="this.style.backgroundColor='#17a2b8'; this.style.color='#fff';" 
+       onmouseout="this.style.backgroundColor=''; this.style.color='#17a2b8';">
+       Chi tiết phiếu nhập
+    </a>
+    <a asp-action="NhapPhieuKho"
+       style="text-decoration: none; color: violet; font-weight: bold; padding: 8px 12px; border: 1px solid violet; border-radius: 5px; transition: background-color 0.3s, color 0.3s;"
+       onmouseover="this.style.backgroundColor='#ee74e1'; this.style.color='#fff';"
+       onmouseout="this.style.backgroundColor=''; this.style.color='#ee74e1';">
+        Nhập Kho
+    </a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BoNho)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ram)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManHinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Camera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pin)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BoNho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ram)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManHinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Camera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pin)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "SuaSanPham", new { Tensp = item.Ten })
+                @* @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

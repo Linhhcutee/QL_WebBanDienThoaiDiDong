@@ -1,0 +1,96 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model webbandienthoai.Models.Sanpham
+
+@{
+    ViewData["Title"] = "Themsanpham";
+}
+
+<h1>Thêm Sản Phẩm Mới</h1>
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+<a asp-action="DanhMucSanPham"
+   style="text-decoration: none; color: #007bff; font-weight: bold; padding: 8px 12px; border: 1px solid #007bff; border-radius: 5px; transition: background-color 0.3s, color 0.3s;"
+   onmouseover="this.style.backgroundColor='#007bff'; this.style.color='#fff';"
+   onmouseout="this.style.backgroundColor=''; this.style.color='#007bff';">
+    Danh Mục Sản Phẩm
+</a>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Themsanpham">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ten" class="control-label">Tên Sản Phẩm</label>
+                <input asp-for="Ten" class="form-control" />
+                <span asp-validation-for="Ten" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Anh" class="control-label">Ảnh</label>
+                <input asp-for="Anh" type="file" class="form-control" accept="image/*" />
+                <span asp-validation-for="Anh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BoNho" class="control-label">Bộ Nhớ</label>
+                <select asp-for="BoNho" class="form-control">
+                    <option value="64GB">64GB</option>
+                    <option value="128GB">128GB</option>
+                    <option value="256GB">256GB</option>
+                    <option value="512GB">512GB</option>
+                    <option value="1TB">1TB</option>
+                </select>
+                <span asp-validation-for="BoNho" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ram" class="control-label"></label>
+                <select asp-for="Ram" class="form-control">
+                    <option value="1GB">1GB</option>
+                    <option value="2GB">2GB</option>
+                    <option value="3GB">3GB</option>
+                    <option value="4GB">4GB</option>
+                    <option value="6GB">6GB</option>
+                </select>
+                <span asp-validation-for="Ram" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cpu" class="control-label">Bộ Vi Xử Lý</label>
+                <input asp-for="Cpu" class="form-control" />
+                <span asp-validation-for="Cpu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ManHinh" class="control-label">Kích Thước Màn Hình</label>
+                <input asp-for="ManHinh" class="form-control" />
+                <span asp-validation-for="ManHinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Camera" class="control-label">Độ Phân Giải Camera</label>
+                <input asp-for="Camera" class="form-control" />
+                <span asp-validation-for="Camera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pin" class="control-label">Dung Lượng Pin</label>
+                <input asp-for="Pin" class="form-control" />
+                <span asp-validation-for="Pin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MoTa" class="control-label">Mô Tả</label>
+                <input asp-for="MoTa" class="form-control" />
+                <span asp-validation-for="MoTa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaThuongHieu" class="control-label">Thương Hiệu</label>
+                <select asp-for="MaThuongHieu" class="form-control" asp-items="ViewBag.MaThuongHieu"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

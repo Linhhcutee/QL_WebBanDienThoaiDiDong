@@ -1,0 +1,81 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = webbandienthoai
+build_property.RootNamespace = webbandienthoai
+build_property.ProjectDir = D:\workspace\utc\HK7\DacTa\webbandienthoai\webbandienthoai\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\workspace\utc\HK7\DacTa\webbandienthoai\webbandienthoai
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/QuanLyTaiKhoan/DanhSachTaiKhoan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5VGFpS2hvYW5cRGFuaFNhY2hUYWlLaG9hbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/QuanLyTaiKhoan/ThemTaiKhoan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5VGFpS2hvYW5cVGhlbVRhaUtob2FuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/Shared/MainLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1haW5MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/UpdateProducts/CTPhieuNhapKho.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBkYXRlUHJvZHVjdHNcQ1RQaGlldU5oYXBLaG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/UpdateProducts/DanhMucSanPham.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBkYXRlUHJvZHVjdHNcRGFuaE11Y1NhblBoYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/UpdateProducts/NhapKho.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBkYXRlUHJvZHVjdHNcTmhhcEtoby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/UpdateProducts/NhapPhieuKho.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBkYXRlUHJvZHVjdHNcTmhhcFBoaWV1S2hvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/UpdateProducts/SuaSanPham.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBkYXRlUHJvZHVjdHNcU3VhU2FuUGhhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/UpdateProducts/Themsanpham.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBkYXRlUHJvZHVjdHNcVGhlbXNhbnBoYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/workspace/utc/HK7/DacTa/webbandienthoai/webbandienthoai/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
